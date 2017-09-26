@@ -9,4 +9,3 @@ devoured BOOLEAN DEFAULT true,
 date  TIMESTAMP
 );
 
-SELECT * FROM burgers;
