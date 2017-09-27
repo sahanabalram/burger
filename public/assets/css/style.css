@@ -1,7 +1,7 @@
 div.container-fluid {
     max-width: 960px;
-    
 }
+
 body {
     background-color: blanchedalmond;
 }
@@ -19,25 +19,17 @@ img {
     margin: auto;
 }
 
-#buttonHolder{ text-align: center; }
-
-/* button.btn.btn-primary.btn-md {
-    display: block;
-    clear: both;
-    margin-left: 20px;
-} */
-
-.not-eaten.text-center .eaten.text-center {
-    background: lightslategrey;
-    float: left;
-    padding: 10px;
-    margin-top: 5px;
-    clear: both;
+#buttonHolder {
+    text-align: center;
 }
+
 button.burger-button.btn-default.btn-md.devour {
     margin: 2px;
 }
 
 .bname {
     height: 31px;
+    background: lightslategrey;
+    margin: 2px;
+    text-align: center;
 }
