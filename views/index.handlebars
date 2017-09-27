@@ -11,7 +11,7 @@ that will submit the user input into the database. --}}
             {{#each burgers}}
             <div class="row" id="burgerID{{this.id}}">
                 <div class="bname col s6">
-                {{this.id}}.{{this.burger_name}}
+                {{this.burger_name}}
                 </div>
                 <div class="col s5">
                     <button class="devour waves-effect waves-light btn" onClick="devourButton({{this.id}})" id={{this.id}} type="submit">Devour It!!!!</button>
@@ -25,7 +25,7 @@ that will submit the user input into the database. --}}
     <div class="row">
         <h1 class="center-align">Add a Burger</h1>
         <form action="/" method="POST">
-            <textarea type="text" name="burger" class="center-align"></textarea>
+            <textarea type="text" name="burger" class="center-align materialize-textarea"></textarea>
             <div id="buttonHolder">
                 <button class="btn waves-effect waves-light" type="submit" name="action" class="center-align">Submit
                                  <i class="material-icons right"></i>

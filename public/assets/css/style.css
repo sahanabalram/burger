@@ -1,6 +1,7 @@
 
 body {
     background-color: blanchedalmond;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 #jumbotron {
@@ -26,8 +27,11 @@ img {
 
 .bname {
     height: 38px;
-    background: lightslategrey;
+    background: #9fa8da;
     margin: 2px;
-    padding-top: 20px;
     text-align: center;
+}
+
+.bname.col.s6 {
+    padding: 8px;
 }
