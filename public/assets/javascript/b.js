@@ -17,6 +17,7 @@ function devourButton(bid) {
     });
     // move from one div to another
     $("#burgerID" + bid).appendTo("#devouredBurger");
+    $("#label" + bid).addClass("red lighten-3");
     // removing the button and burger name
     $("#" + bid).remove();
 }
