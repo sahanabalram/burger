@@ -13,3 +13,5 @@ INSERT INTO burgers(burger_name,devoured,date) VALUES("Cheese Burger1",true,'201
 INSERT INTO burgers (burger_name,devoured,date) VALUES("beet",false,"2017-09-25");
 
 DELETE FROM  burgers WHERE id= 8;
+
+UPDATE burgers SET devoured = false WHERE id=9;

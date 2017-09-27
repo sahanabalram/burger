@@ -1,6 +1,3 @@
-div.container-fluid {
-    max-width: 960px;
-}
 
 body {
     background-color: blanchedalmond;
@@ -23,13 +20,14 @@ img {
     text-align: center;
 }
 
-button.burger-button.btn-default.btn-md.devour {
+.devour {
     margin: 2px;
 }
 
 .bname {
-    height: 31px;
+    height: 38px;
     background: lightslategrey;
     margin: 2px;
+    padding-top: 20px;
     text-align: center;
 }

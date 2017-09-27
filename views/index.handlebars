@@ -7,18 +7,19 @@ that will submit the user input into the database. --}}
     </div>
 
     <div class="row">
-        <div class="col s4">
+        <div class="col s6">
             {{#each burgers}}
-            <div class="bname">  
-                 {{this.id}}.{{this.burger_name}}
+            <div class="row" id="burgerID{{this.id}}">
+                <div class="bname col s6">
+                {{this.id}}.{{this.burger_name}}
+                </div>
+                <div class="col s5">
+                    <button class="devour waves-effect waves-light btn" onClick="devourButton({{this.id}})" id={{this.id}} type="submit">Devour It!!!!</button>
+                </div>
             </div>
             {{/each}}
         </div>
-        <div class="col s4">
-            {{#each burgers}}<button class="burger-button btn-default btn-md devour" id={{this.id}} type="submit">Devour It!!!!</button><br>{{/each}}
-        </div>
-        <div class="col s4">
-
+        <div class="col s6" id="devouredBurger" class="center-align">
         </div>
     </div>
     <div class="row">
