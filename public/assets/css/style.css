@@ -35,3 +35,7 @@ img {
 .bname.col.s6 {
     padding: 8px;
 }
+
+textarea.center-align.materialize-textarea {
+    font-size: 30px;
+}
