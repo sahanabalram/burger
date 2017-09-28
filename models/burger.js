@@ -10,7 +10,6 @@ var burger = {
     },
     // The variables columns and values are array
     insertOne: function(burgerName,callback) {
-        console.log(burgerName);
         orm.insertOne("burgers",["burger_name", "devoured"],[burgerName, false],callback);       
     },
     updateOne: function(objColVals,condition,callback) {
