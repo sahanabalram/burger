@@ -8,7 +8,7 @@ that will submit the user input into the database. --}}
 
     <div class="row">
         <div class="col s6">
-            {{#each burgers}}
+            {{#each noteaten}}
             <div class="row" id="burgerID{{this.id}}">
                 <div class="bname col s6" id="label{{this.id}}">
                 {{this.burger_name}}
@@ -20,6 +20,13 @@ that will submit the user input into the database. --}}
             {{/each}}
         </div>
         <div class="col s6" id="devouredBurger" class="center-align">
+            {{#each eaten}}
+            <div class="row" id="burgerID{{this.id}}">
+                <div class="bname col s6 red lighten-3" id="label{{this.id}}">
+                {{this.burger_name}}
+                </div>
+            </div>
+            {{/each}}
         </div>
     </div>
     <div class="row">
@@ -34,26 +41,3 @@ that will submit the user input into the database. --}}
         </form>
     </div>
 </div>
-
-{{!--
-<div class="container">
-
-    <div class="row">
-        <div class="col-md-4 col-md-8">
-            {{#each notEatenBurgers}}
-            <form>
-                <div class="not-eaten text-center">
-                    {{this.id}}. {{this.burger_name}}
-                </div>
-                <button class="burger-button btn-default btn-md devour" type="submit">Devour It!!!!</button>
-            </form>
-            {{/each}}
-
-        </div>
-        <div class="row">
-
-            </form>
-        </div>
-    </div>
-</div>
-</div> --}}
