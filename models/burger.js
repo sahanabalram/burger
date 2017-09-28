@@ -2,27 +2,19 @@ var express = require("express");
 var orm = require("../config/orm.js");
 var connection = require("../config/connection.js")
 
-
-
 var burger = {
-    all: function (callback) {
-        orm.all("burgers", function (response) {
+    selectAll: function (callback) {
+        orm.selectAll("burgers", function (response) {
             callback(response);
         });
     },
     // The variables columns and values are array
-    create: function(callback) {
-        orm.create("burgers",cols,vals,function(response){
-            callback(response);
-        });
+    insertOne: function(burgerName,callback) {
+        console.log(burgerName);
+        orm.insertOne("burgers",["burger_name", "devoured"],[burgerName, false],callback);       
     },
-    update: function(objColVals,condition,callback) {
-        orm.update("burgers",objColVals,condition,function(response){
-            callback(response);
-        });
-    },
-    delete: function(cols,vals,callback) {
-        orm.delete("burger_name",function(response){
+    updateOne: function(objColVals,condition,callback) {
+        orm.updateOne("burgers",objColVals,condition,function(response){
             callback(response);
         });
     }
