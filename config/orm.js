@@ -1,6 +1,29 @@
 var connection = require("./connection.js");
+// Helper function for SQL syntax.
+function printQuestionMarks(num) {
+    var arr = [];
+  
+    for (var i = 0; i < num; i++) {
+      arr.push("?");
+    }
+  
+    return arr.toString();
+  }
+
+  // Helper function for SQL syntax.
+function objToSql(ob) {
+    var arr = [];
+  
+    for (var key in ob) {
+      if (Object.hasOwnProperty.call(ob, key)) {
+        arr.push(key + "=" + ob[key]);
+      }
+    }
+  
+    return arr.toString();
+  }
 var orm = {
-    all: function (tableInput, callback) {
+    selectAll: function (tableInput, callback) {
         var queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, function (err, result) {
             if (err) {
@@ -9,7 +32,7 @@ var orm = {
             callback(result);
         });
     },
-    create: function (table, cols, vals, callback) {
+    insertOne: function (table, cols, vals, callback) {
         var queryString = "INSERT INTO " + table;
         queryString += " (";
         queryString += cols.toString();
@@ -26,7 +49,7 @@ var orm = {
         });
     },
     // An example of objColVals would be {name: panther, sleepy: true}
-    update: function (table, objColVals, condition, callback) {
+    updateOne: function (table, objColVals, condition, callback) {
         var queryString = "UPDATE " + table;
         queryString += " SET ";
         queryString += objToSql(objColVals);
@@ -40,17 +63,6 @@ var orm = {
             callback(result);
         });
     },
-    delete: function (table, condition, callback) {
-        var queryString = "DELETE FROM " + table;
-        queryString += " WHERE ";
-        queryString += condition;
-        connection.query(queryString, function (err, result) {
-            if (err) {
-                throw err;
-            }
-            callback(result);
-        });
-    }
 };
 
 module.exports = orm;
