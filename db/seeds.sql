@@ -1,4 +1,5 @@
 USE burgers_db;
+
 SELECT * FROM burgers;
 
 DROP TABLE burgers;
@@ -12,6 +13,6 @@ INSERT INTO burgers(burger_name,devoured,date) VALUES("Cheese Burger1",true,'201
 
 INSERT INTO burgers (burger_name,devoured,date) VALUES("beet",false,"2017-09-25");
 
-DELETE FROM  burgers WHERE id= 9;
+DELETE FROM  burgers WHERE id= 6;
 
 UPDATE burgers SET devoured = true WHERE id=9;
