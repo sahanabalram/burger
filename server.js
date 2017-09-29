@@ -8,7 +8,7 @@ var app = express();
 var ROUTERAPI = require("./controllers/burgers_controller.js");
 app.use(express.static("public"));
 
-var PORT = 3001;
+var PORT = process.env.PORT || 3001;
 
 // Parse application/x-www-form-urlencoded
 app.use(bodyParser.json());
