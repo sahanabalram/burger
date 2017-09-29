@@ -24,18 +24,26 @@ router.get("/", function (request, response) {
   });
 });
 router.post("/", function (req, res) {
-  burger.insertOne([req.body.burger],function(result){
+  if (req.body.burger) {
+    burger.insertOne([req.body.burger],function(result){
+      res.redirect("/");
+    });
+  } else {
     res.redirect("/");
-  });
+  }
 });
 
 router.put("/", function (request, response) {
   var condition = "id = " + request.body.id;
-  burger.updateOne({
-    devoured: request.body.devoured
-  }, condition, function() {
-    response.redirect("/");
-  });
+  if (condition && request.body.devoured) {
+    burger.updateOne({
+      devoured: request.body.devoured
+    }, condition, function() {
+      response.redirect("/");
+    });
+  } else {
+    res.redirect("/");
+  }
 });
 
 module.exports = router;
